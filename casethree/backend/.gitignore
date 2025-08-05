@@ -1,0 +1,27 @@
+.env
+__pycache__/
+
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Django migrations (optional, if you want to ignore them)
+# */migrations/*.pyc
+# */migrations/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor configs (optional)
+.vscode/
+.idea/
+*.swp
