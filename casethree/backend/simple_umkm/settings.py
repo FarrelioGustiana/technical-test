@@ -47,6 +47,11 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',

@@ -9,6 +9,17 @@ from django.contrib.auth.models import User
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+def logout_view(request):
+    try:
+        refresh_token = request.data["refresh"]
+        token = RefreshToken(refresh_token)
+        token.blacklist()
+        return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
 def login_view(request):
     serializer = UserLoginSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
